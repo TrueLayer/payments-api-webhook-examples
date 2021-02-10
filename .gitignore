@@ -4,3 +4,4 @@ bin/
 obj/
 
 launchSettings.json
+__pycache__

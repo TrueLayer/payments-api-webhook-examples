@@ -45,7 +45,7 @@ async def on_webhook(request):
     verified = await _verify_signature(app, jws, payload)
     if not verified:
         raise InvalidSignatureException('Invalid signature')
-    return response.empty(status_code=202)
+    return response.empty(status=202)
 
 
 def _get_payload(body, timestamp):
@@ -72,8 +72,9 @@ async def _verify_signature(app, jws, payload):
     key = jwk.construct(raw_key)
     payload_b64 = base64url_encode(payload).decode()
     secured_input = f'{jws_header_b64}.{payload_b64}'
+    print(secured_input)
 
-    return key.verify(signature, secured_input.encode())
+    return key.verify(secured_input.encode(), signature)
 
 
 if __name__ == '__main__':
