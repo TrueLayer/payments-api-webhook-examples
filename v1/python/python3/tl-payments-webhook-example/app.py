@@ -41,7 +41,11 @@ async def on_webhook(request):
     timestamp = request.headers.get('X-TL-Webhook-Timestamp')
     if timestamp is None:
         raise InvalidSignatureException('Missing X-TL-Webhook-Timestamp header')
-    payload = _get_payload(request.body.decode(), timestamp)
+    # Deserialize using an OrderedDict so we can rebuild the exact payload
+    parsed_body = request.load_json(
+        loads=lambda raw: json.loads(raw, object_pairs_hook=OrderedDict)
+    )
+    payload = _get_payload(parsed_body, timestamp)
     verified = await _verify_signature(app, jws, payload)
     if not verified:
         raise InvalidSignatureException('Invalid signature')
