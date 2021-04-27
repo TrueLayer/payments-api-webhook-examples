@@ -1,5 +1,5 @@
-import Router from '@koa/router';
 import Koa from 'koa';
+import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import base64Url from 'base64url';
 import jwkToPem from 'jwk-to-pem';

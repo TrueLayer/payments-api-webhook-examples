@@ -1,5 +1,5 @@
-const Router = require('@koa/router');
 const Koa = require('koa');
+const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const base64Url = require('base64url');
 const jwkToPem = require('jwk-to-pem');
