@@ -6,6 +6,7 @@ import jwkToPem from 'jwk-to-pem';
 import { Algorithm, verify } from 'jws';
 import fetch from 'node-fetch';
 
+const port = 8080;
 const app = new Koa();
 const router = new Router();
 
@@ -59,8 +60,8 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-app.listen(8080, () => {
-  console.log(`listening at http://localhost:${8080}`);
+app.listen(port, () => {
+  console.log(`listening at http://localhost:${port}`);
 });
 
 type Jwk = {
