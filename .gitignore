@@ -1,3 +1,5 @@
+.DS_Store
+
 .idea/
 
 bin/
@@ -5,3 +7,7 @@ obj/
 
 launchSettings.json
 __pycache__
+
+.npmrc
+dist
+node_modules
