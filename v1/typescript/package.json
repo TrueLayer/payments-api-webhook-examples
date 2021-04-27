@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@koa/router": "10.0.0",
-    "base64-url": "2.3.3",
+    "base64url": "3.0.1",
     "jwk-to-pem": "2.0.5",
     "jws": "4.0.0",
     "koa": "2.13.1",
@@ -19,7 +19,7 @@
     "node-fetch": "2.6.1"
   },
   "devDependencies": {
-    "@types/base64-url": "2.2.0",
+    "@types/base64url": "2.0.0",
     "@types/jwk-to-pem": "2.0.0",
     "@types/jws": "3.2.3",
     "@types/koa": "2.13.1",

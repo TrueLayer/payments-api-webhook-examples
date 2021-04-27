@@ -1,7 +1,7 @@
 import Router from '@koa/router';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
-import { decode, encode } from 'base64-url';
+import base64Url from 'base64url';
 import jwkToPem from 'jwk-to-pem';
 import { Algorithm, verify } from 'jws';
 import fetch from 'node-fetch';
@@ -15,14 +15,14 @@ const splitSignature = (signature: string): string[] => signature.split('.');
 
 const getJwsHeaders = (signature: string): JwsHeaders => {
   const parts = splitSignature(signature);
-  return JSON.parse(decode(parts[0]));
+  return JSON.parse(base64Url.decode(parts[0]));
 }
 
 const verifyDetachedSignatureAsync = async (signature: string, payload: any): Promise<boolean> => {
   const jwsHeaders = getJwsHeaders(signature);
 
   const serializedPayload = JSON.stringify(payload);
-  const payloadB64 = encode(serializedPayload);
+  const payloadB64 = base64Url.encode(serializedPayload);
 
   const signatureParts = splitSignature(signature);
   const fullSignature = `${signatureParts[0]}.${payloadB64}.${signatureParts[2]}`;
