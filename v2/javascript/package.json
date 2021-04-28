@@ -1,0 +1,19 @@
+{
+  "name": "payments-api-webhook-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "license": "ISC",
+  "dependencies": {
+    "base64url": "3.0.1",
+    "jwk-to-pem": "2.0.5",
+    "jws": "4.0.0",
+    "koa": "2.13.1",
+    "koa-bodyparser": "4.3.0",
+    "koa-router": "10.0.0",
+    "node-fetch": "2.6.1"
+  }
+}
