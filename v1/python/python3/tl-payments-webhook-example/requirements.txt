@@ -25,7 +25,7 @@ sanic==20.12.1
 six==1.15.0
 sniffio==1.2.0
 typing-extensions==3.7.4.3
-ujson==4.0.2
+ujson==5.1.0
 uvloop==0.14.0
 websockets==8.1
 yarl==1.6.3
