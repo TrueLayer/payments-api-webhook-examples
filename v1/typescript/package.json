@@ -16,7 +16,7 @@
     "koa": "2.13.1",
     "koa-bodyparser": "4.3.0",
     "koa-router": "10.0.0",
-    "node-fetch": "2.6.1"
+    "node-fetch": "3.1.1"
   },
   "devDependencies": {
     "@types/base64url": "2.0.0",
